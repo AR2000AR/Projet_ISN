@@ -363,21 +363,21 @@ def login_screen(theme):
         fbouton_espace= Frame(fbouton, bg=theme[0], pady=20)
         fbouton_espace.pack()
         #frames pour espacer entre les boutons espace entre les boutons
-        frame_espace1=Frame(fbouton, pady=5, bg=theme[0])
-        frame_espace1.pack()
         frame_espace2=Frame(fbouton, pady=5, bg=theme[0])
         frame_espace2.pack()
+        frame_espace1=Frame(fbouton, pady=5, bg=theme[0])
+        frame_espace1.pack()
         frame_espace3=Frame(fbouton, pady=5, bg=theme[0])
         frame_espace3.pack()
-        #case à cocher pour memoriser
-        Var = IntVar()
-        memo  = Checkbutton(frame_espace1, text='Se souvenir de moi',variable=Var,bg=theme[0],activebackground=theme[0])
-        memo.pack()
         #bouton pour se connecter
-        bouton_valider = Button(frame_espace2,text="Connection",command=id_connect, relief=FLAT, width=20,bg="#525a8e",fg=theme[1],font="40",pady=8,activebackground="#57609b",bd=0)
+        bouton_valider = Button(frame_espace1,text="Connection",command=id_connect, relief=FLAT, width=20,bg="#525a8e",fg=theme[1],font="40",pady=8,activebackground="#57609b",bd=0)
         bouton_valider.pack()
         bouton_valider.bind('<Enter>',hover_v)
         bouton_valider.bind('<Leave>',leave_v)
+        #case à cocher pour memoriser
+        Var = IntVar()
+        memo  = Checkbutton(frame_espace2, text='Se souvenir de moi',variable=Var,bg=theme[0],activebackground=theme[0])
+        memo.pack()
         #bouton pour créer un compte
         bouton_créer = Button(frame_espace3,text="Inscription",command=id_create,relief=FLAT,width=20,bg="#525a8e",fg=theme[1],font="40",pady=8,activebackground="#57609b",bd=0)
         bouton_créer.pack()
